@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://syncnote:kendrickx@114.132.246.79:27017/syncnote
