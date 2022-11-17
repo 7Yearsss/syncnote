@@ -1,6 +1,8 @@
 package com.xxb.notesync.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.xxb.notesync.dao.BlogCreate;
+import com.xxb.notesync.dao.BlogUpdate;
 import com.xxb.notesync.dao.BlogView;
 import com.xxb.notesync.service.BlogService;
 import com.xxb.notesync.utls.IdResponse;
@@ -26,8 +28,14 @@ class BlogController {
     }
 
     @PutMapping("/blog/{id}")
-    public IdResponse update(@PathVariable("id")String id){
-        return blogService.update(id);
+    public IdResponse update(@PathVariable("id")String id, @RequestBody BlogUpdate blogUpdate){
+        return blogService.update(id,blogUpdate);
     }
+
+    @DeleteMapping("/blog/{id}")
+    public IdResponse delete(@PathVariable("id")String id){
+        return blogService.delete(id);
+    }
+
 
 }
