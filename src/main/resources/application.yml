@@ -3,7 +3,7 @@ spring:
     mongodb:
       uri: mongodb://syncnote:kendrickx@114.132.246.79:27017/syncnote
 
-jongo:
-  host: localhost
+mongo:
+  host: 114.132.246.79
   port: 27017
-  database: curd
+  dbname: syncnote

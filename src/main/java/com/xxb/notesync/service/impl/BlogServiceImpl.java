@@ -8,8 +8,10 @@ import com.xxb.notesync.entity.BlogEntity;
 import com.xxb.notesync.service.BlogService;
 import com.xxb.notesync.utls.IdResponse;
 import com.xxb.notesync.utls.Instances;
+import com.xxb.notesync.utls.MongoCollection;
 import com.xxb.notesync.utls.MongoDBUtil;
 import io.github.classgraph.json.Id;
+import org.jongo.Jongo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoAction;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -26,7 +28,9 @@ public class BlogServiceImpl implements BlogService {
     private MongoTemplate mongoTemplate;
 
     @Autowired
-    private 
+    private MongoCollection<BlogEntity> blogEntityMongoCollection;
+
+
 
     @Override
     public IdResponse create(BlogCreate create) {
@@ -59,6 +63,5 @@ public class BlogServiceImpl implements BlogService {
         Query query=new Query(new Criteria().and("id").is(id));
         mongoTemplate.remove(query,BlogEntity.class);
         return IdResponse.build(id);
-
     }
 }

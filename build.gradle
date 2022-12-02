@@ -26,6 +26,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation group: 'com.alibaba', name: 'fastjson', version: '1.2.83'
+	implementation group: 'org.mongodb', name: 'mongo-java-driver', version: '3.2.2'
 	implementation group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.4.2'
 	implementation group: 'org.springblade', name: 'blade-core-tool', version: '3.5.0'
 	implementation group: 'org.jongo', name: 'jongo', version: '1.4.0'
