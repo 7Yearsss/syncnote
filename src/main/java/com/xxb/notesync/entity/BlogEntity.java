@@ -10,9 +10,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Document(collation = "blog")
+@Document(collection = "blog")
 @Data
-@XmlAccessorType(XmlAccessType.FIELD)
 public class BlogEntity implements Serializable {
 
     @Id

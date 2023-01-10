@@ -1,6 +1,7 @@
 package com.xxb.notesync.utls;
 
 import java.lang.reflect.Field;
+import java.util.Objects;
 
 public class Instances {
 
@@ -25,6 +26,7 @@ public class Instances {
             } catch (IllegalAccessException e) {
                 throw new RuntimeException(e);
             }
+            if(Objects.isNull(value)) continue;
             for(Field targetField: targetFields){
                 targetField.setAccessible(true);
                 if(targetField.getName().equals(sourceField.getName())){
